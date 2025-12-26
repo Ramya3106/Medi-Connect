@@ -130,6 +130,7 @@ const Login = () => {
                     <button className="flex-1 border rounded-xl py-2 flex items-center justify-center gap-2">
                         <img
                             src="https://www.svgrepo.com/show/475656/google-color.svg"
+                            alt="Google logo"
                             className="w-5"
                         />
                         Google
@@ -138,6 +139,7 @@ const Login = () => {
                     <button className="flex-1 border rounded-xl py-2 flex items-center justify-center gap-2">
                         <img
                             src="https://www.svgrepo.com/show/511330/apple-173.svg"
+                            alt="Apple logo"
                             className="w-5"
                         />
                         Apple
