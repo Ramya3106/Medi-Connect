@@ -42,7 +42,7 @@ const Login = () => {
                         placeholder="Oliver Bennett"
                         className="input pl-10"
                     />
-                    <span className="absolute left-3 text-gray-400">👤</span>
+                    <span className="absolute left-3 top-4 text-gray-400">👤</span>
                 </div>
 
                 {/* EMAIL */}
@@ -55,7 +55,7 @@ const Login = () => {
                         placeholder="OliverBennett12@gmail.com"
                         className="input pl-10"
                     />
-                    <span className="absolute left-3 text-gray-400">✉️</span>
+                    <span className="absolute left-3 top-4 text-gray-400">✉️</span>
                 </div>
 
                 {/* PASSWORD */}
@@ -68,9 +68,9 @@ const Login = () => {
                         placeholder="OliverBennett@123"
                         className="input pl-10 pr-10"
                     />
-                    <span className="absolute left-3 text-gray-400">🔒</span>
+                    <span className="absolute left-3 top-4 text-gray-400">🔒</span>
                     <span
-                        className="absolute right-3 cursor-pointer"
+                        className="absolute right-3 top-4 cursor-pointer"
                         onClick={() => setShowPassword(!showPassword)}
                     >
                         👁️
@@ -87,9 +87,9 @@ const Login = () => {
                         placeholder="********"
                         className="input pl-10 pr-10"
                     />
-                    <span className="absolute left-3 text-gray-400">🔒</span>
+                    <span className="absolute left-3 top-4 text-gray-400">🔒</span>
                     <span
-                        className="absolute right-3 cursor-pointer"
+                        className="absolute right-3 top-4 cursor-pointer"
                         onClick={() => setShowConfirm(!showConfirm)}
                     >
                         👁️
