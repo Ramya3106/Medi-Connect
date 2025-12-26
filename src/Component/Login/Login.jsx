@@ -1,7 +1,6 @@
 import { useState } from "react";
 import logo from "../../assets/logo.png";
 
-
 const Login = () => {
     const [isSignIn, setIsSignIn] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
@@ -13,9 +12,7 @@ const Login = () => {
 
                 {/* LOGO */}
                 <div className="text-center mb-4">
-                    <img src={logo} alt="Medi Connect" className="w-30 mx-auto mb-2" />
-
-
+                    <img src={logo} alt="Medi Connect" className="w-24 mx-auto mb-2" />
                     <h2 className="text-2xl font-bold">
                         <span className="text-blue-600">Medi</span>
                         <span className="text-red-500">Connect</span>
@@ -32,20 +29,24 @@ const Login = () => {
                         : "Create your new account"}
                 </p>
 
-                {/* SIGN UP ONLY */}
-                <label className="text-sm font-medium">
-                    Full Name<span className="text-red-500">*</span>
-                </label>
-                <div className="relative mt-1">
-                    <input
-                        type="text"
-                        placeholder="Oliver Bennett"
-                        className="input pl-10"
-                    />
-                    <span className="absolute left-3 top-4 text-gray-400">👤</span>
-                </div>
+                {/* FULL NAME – SIGN UP ONLY */}
+                {!isSignIn && (
+                    <>
+                        <label className="text-sm font-medium">
+                            Full Name<span className="text-red-500">*</span>
+                        </label>
+                        <div className="relative mt-1">
+                            <input
+                                type="text"
+                                placeholder="Oliver Bennett"
+                                className="input pl-10"
+                            />
+                            <span className="absolute left-3 top-4 text-gray-400">👤</span>
+                        </div>
+                    </>
+                )}
 
-                {/* EMAIL */}
+                {/* EMAIL – BOTH */}
                 <label className="text-sm font-medium mt-4 block">
                     Email
                 </label>
@@ -58,14 +59,14 @@ const Login = () => {
                     <span className="absolute left-3 top-4 text-gray-400">✉️</span>
                 </div>
 
-                {/* PASSWORD */}
+                {/* PASSWORD – BOTH */}
                 <label className="text-sm font-medium mt-4 block">
                     Password<span className="text-red-500">*</span>
                 </label>
                 <div className="relative mt-1">
                     <input
                         type={showPassword ? "text" : "password"}
-                        placeholder="OliverBennett@123"
+                        placeholder="********"
                         className="input pl-10 pr-10"
                     />
                     <span className="absolute left-3 top-4 text-gray-400">🔒</span>
@@ -77,42 +78,54 @@ const Login = () => {
                     </span>
                 </div>
 
-                {/* CONFIRM PASSWORD */}
-                <label className="text-sm font-medium mt-4 block">
-                    Confirm Password<span className="text-red-500">*</span>
-                </label>
-                <div className="relative mt-1">
-                    <input
-                        type={showConfirm ? "text" : "password"}
-                        placeholder="********"
-                        className="input pl-10 pr-10"
-                    />
-                    <span className="absolute left-3 top-4 text-gray-400">🔒</span>
-                    <span
-                        className="absolute right-3 top-4 cursor-pointer"
-                        onClick={() => setShowConfirm(!showConfirm)}
-                    >
-                        👁️
-                    </span>
-                </div>
+                {/* CONFIRM PASSWORD – SIGN UP ONLY */}
+                {!isSignIn && (
+                    <>
+                        <label className="text-sm font-medium mt-4 block">
+                            Confirm Password<span className="text-red-500">*</span>
+                        </label>
+                        <div className="relative mt-1">
+                            <input
+                                type={showConfirm ? "text" : "password"}
+                                placeholder="********"
+                                className="input pl-10 pr-10"
+                            />
+                            <span className="absolute left-3 top-4 text-gray-400">🔒</span>
+                            <span
+                                className="absolute right-3 top-4 cursor-pointer"
+                                onClick={() => setShowConfirm(!showConfirm)}
+                            >
+                                👁️
+                            </span>
+                        </div>
+                    </>
+                )}
 
-                {/* REMEMBER */}
-                <div className="flex items-center mt-4 text-sm">
-                    <input type="checkbox" className="mr-2" />
-                    Remember me
-                </div>
+                {/* FORGOT PASSWORD – SIGN IN ONLY */}
+                {isSignIn && (
+                    <p className="text-right text-sm text-blue-600 cursor-pointer mt-2">
+                        Forgot Password?
+                    </p>
+                )}
 
-                {/* SIGN UP BUTTON */}
+                {/* REMEMBER ME – SIGN UP ONLY */}
+                {!isSignIn && (
+                    <div className="flex items-center mt-4 text-sm">
+                        <input type="checkbox" className="mr-2" />
+                        Remember me
+                    </div>
+                )}
+
+                {/* BUTTON */}
                 <button className="w-full mt-5 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold">
-                    SIGN UP
+                    {isSignIn ? "LOGIN" : "SIGN UP"}
                 </button>
 
-                {/* DIVIDER */}
+                {/* SOCIAL LOGIN – BOTH */}
                 <p className="text-center text-sm text-gray-400 my-4">
                     Or continue with
                 </p>
 
-                {/* SOCIAL */}
                 <div className="flex gap-3">
                     <button className="flex-1 border rounded-xl py-2 flex items-center justify-center gap-2">
                         <img
@@ -130,8 +143,6 @@ const Login = () => {
                         Apple
                     </button>
                 </div>
-
-
 
                 {/* SWITCH */}
                 <p className="text-center text-sm mt-4">
