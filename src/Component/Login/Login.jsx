@@ -70,7 +70,7 @@ const Login = () => {
                     />
                     <span className="absolute left-3 text-gray-400">🔒</span>
                     <span
-                        className="absolute right-3 top-2.5 cursor-pointer"
+                        className="absolute right-3 cursor-pointer"
                         onClick={() => setShowPassword(!showPassword)}
                     >
                         👁️
@@ -89,7 +89,7 @@ const Login = () => {
                     />
                     <span className="absolute left-3 text-gray-400">🔒</span>
                     <span
-                        className="absolute right-3 top-2.5 cursor-pointer"
+                        className="absolute right-3 cursor-pointer"
                         onClick={() => setShowConfirm(!showConfirm)}
                     >
                         👁️
