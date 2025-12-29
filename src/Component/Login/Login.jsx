@@ -1,7 +1,9 @@
 import { useState } from "react";
 import logo from "../../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate();
     const [isSignIn, setIsSignIn] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
@@ -117,9 +119,14 @@ const Login = () => {
                 )}
 
                 {/* BUTTON */}
-                <button className="w-full mt-5 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold">
+                <button
+                    onClick={() => navigate("/dashboard")}
+                    className="w-full mt-5 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold"
+                >
                     {isSignIn ? "LOGIN" : "SIGN UP"}
                 </button>
+
+
 
                 {/* SOCIAL LOGIN – BOTH */}
                 <p className="text-center text-sm text-gray-400 my-4">
